@@ -1,0 +1,168 @@
+:root {
+  --header-height: 70px;
+  --content-width: 800px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header.page-level {
+  height: var(--header-height);
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background: #fff;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 .8em;
+  margin-top: var(--header-height);
+  max-width: var(--content-width);
+}
+
+main section#new-post {
+  display: grid;
+  padding-top: 3rem;
+}
+
+main section#new-post form {
+  border: 1px solid #000;
+  position: relative;
+  height: 50px;
+}
+
+main section#new-post form .upload .check-mark {
+  right: -.1em;
+  position: absolute;
+  display: inline-block;
+  visibility: hidden;
+}
+
+main section#new-post form .upload .check-mark.filled {
+  visibility: visible;
+}
+
+main section#new-post form .upload {
+  cursor: pointer;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right: 1px solid #000;
+  width: 50px;
+}
+
+main section#new-post form .upload input[type=file] {
+  opacity: 0;
+  height: 100%;
+  width: 100% !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+}
+
+main section#new-post form .upload button {
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+main section#new-post form button {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  border-radius: 0;
+  right: 0;
+  top: 50%;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  transform: translateY(-50%);
+}
+
+main section#new-post form input[type=text] {
+  resize: none;
+  border: none;
+  padding: .8em;
+  width:  calc(100% - (50px + 50px));
+  height: 100%;
+  position: absolute;
+  outline: none;
+  top: 50%;
+  left: calc(50px);
+  transform: translateY(-50%);
+}
+
+main section#no-posts {
+  text-align: center;
+  padding: 2em 0;
+  font-size: 1.5em;
+}
+
+main section#posts {
+  columns: 2;
+  padding: 2em 0;
+  column-gap: 2rem;
+}
+
+@media screen and (max-width: 550px) {
+  main section#posts {
+    columns: 1;
+  }
+}
+
+main section#posts > article {
+  display: inline-block;
+  box-shadow: 0px 35px 60px rgba(9, 20, 13, 0.1);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+main section#posts > article header {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem .8rem 1rem;
+  align-items: center;
+}
+
+main section#posts > article header img {
+  border-radius: 50%;
+  margin-right: .5rem;
+  width: 45px;
+  height: 45px;
+}
+
+main section#posts > article header > section * {
+  margin: 0;
+  padding: 0;
+}
+
+main section#posts > article footer {
+  padding: .5rem 1rem;
+}
+
+footer.page-level {
+  text-align: center;
+  padding: 1rem 0; 
+}

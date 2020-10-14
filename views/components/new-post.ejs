@@ -1,0 +1,21 @@
+<form action="/posts" enctype="multipart/form-data" method="post">
+
+  <div class="upload" tabindex="0">
+    <span class="check-mark">
+      <%- include("icons/check") %>
+    </span>
+
+    <button type="button" tabindex="0">
+      <%- include("icons/camera") %>
+    </button>
+
+    <input tabindex="1" type="file" required name="photo" accept="image/*" />
+  </div>
+
+  <input type="text" name="caption" required placeholder="Say something about your photo">
+
+  <button>
+    <%- include("icons/send") %>
+  </button>
+
+</form>

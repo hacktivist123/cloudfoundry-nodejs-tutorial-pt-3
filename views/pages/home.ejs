@@ -1,0 +1,29 @@
+<%- include('../components/header') -%>
+
+<section id="new-post">
+  <%- include('../components/new-post') %>
+</section>
+
+<% if (posts.length > 0) { %>
+<section id="posts">
+  <% posts.forEach(post => { %>
+  <article tabindex="1">
+    <header>
+      <img src="https://ui-avatars.com/api/?background=000&color=fff&name=<%= post.user %>" alt="<%= post.user %>">
+      <section>
+        <h4><%= post.user %></h4>
+        <p><%= post.createdAt %></p>
+      </section>
+    </header>
+    <img src="<%= post.url %>" alt="<%= post.caption %>" />
+    <footer>
+      <p><%= post.caption %></p>
+    </footer>
+  </article>
+  <% }) %>
+</section>
+<% } else { %>
+<section id="no-posts">No posts found!</section>
+<% } %>
+
+<%- include('../components/footer') -%>
